@@ -31,3 +31,6 @@ Visit our [official website](https://arthurlumertz.github.io/libORIN/) for setup
 - STB Image 
 - STB Vorbis 
 - JOML
+
+## License
+libORIN is licensed under the [Apache License 2.0](LICENSE), offering you full freedom to use it in both commercial and personal projects. While acknowledging libORIN is not required, we welcome any recognition. It provides a versatile and efficient framework for building multi-platform 2D and 3D games in Java.
