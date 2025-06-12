@@ -5,6 +5,8 @@
 # What is libORIN?
 libORIN is a cross-platform Java game development library based on OpenGL (>=v2.1), designed for Windows, macOS, Linux. It provides robust features for 2D and 3D game development while avoiding the bulk of writing your own engine, while still letting you build the games exactly the way you want.
 
+> libORIN is in heavy development. Please report any bugs or issues that may occur!
+
 ## Get Started
 Getting started with libORIN is quick and easy thanks to the Gradle integration, you can have your project up and running within minutes.
 
