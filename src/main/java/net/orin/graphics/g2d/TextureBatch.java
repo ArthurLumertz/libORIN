@@ -57,7 +57,9 @@ public class TextureBatch implements Batch {
 		enableBlending();
 
 		shader.bind();
-		shader.setUniformMatrix("u_combMatrix", combinedMatrix);
+		if (combinedMatrix != null) {
+			shader.setUniformMatrix("u_combMatrix", combinedMatrix);
+		}
 		t.init();
 	}
 

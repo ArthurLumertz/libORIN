@@ -38,8 +38,8 @@ public class Application {
         Display.setTitle(title);
         Display.setResizable(resizable);
         Display.setIcon(iconPath);
-        Display.useVsync(useVsync);
         Display.setSamples(samples);
+        Display.useVsync(useVsync);
         Display.create(glVersion);
     }
 

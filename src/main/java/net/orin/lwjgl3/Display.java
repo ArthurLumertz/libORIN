@@ -1,5 +1,6 @@
 package net.orin.lwjgl3;
 
+import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
@@ -32,6 +33,9 @@ public class Display {
 	private static GLFWImage.Buffer icons;
 	private static boolean resizable;
 	private static int samples;
+
+	private static int framebufferWidth;
+	private static int framebufferHeight;
 
 	private static int windowedX, windowedY;
 	private static int windowedWidth = 854, windowedHeight = 480;
@@ -112,6 +116,7 @@ public class Display {
 		glfwSetFramebufferSizeCallback(window, new GLFWFramebufferSizeCallback() {
 			@Override
 			public void invoke(long window, int width, int height) {
+				updateFramebuffer();
 				Display.width = width;
 				Display.height = height;
 			}
@@ -123,6 +128,7 @@ public class Display {
 		glfwMakeContextCurrent(window);
 		GL.createCapabilities();
 
+		updateFramebuffer();
 		glfwSwapInterval(useVsync ? 1 : 0);
 
 		ALContext.create();
@@ -141,6 +147,17 @@ public class Display {
 	public static boolean shouldClose() {
 		glfwPollEvents();
 		return glfwWindowShouldClose(window);
+	}
+
+	private static void updateFramebuffer() {
+		try (MemoryStack stack = MemoryStack.stackPush()) {
+			IntBuffer fbWidth = stack.mallocInt(1);
+			IntBuffer fbHeight = stack.mallocInt(1);
+			glfwGetFramebufferSize(window, fbWidth, fbHeight);
+			glViewport(0, 0, fbWidth.get(0), fbHeight.get(0));
+			framebufferWidth = fbWidth.get(0);
+			framebufferHeight = fbHeight.get(0);
+		}
 	}
 
 	public static void swapBuffers() {
@@ -229,6 +246,14 @@ public class Display {
 		} else {
 			glfwSetWindowMonitor(window, NULL, windowedX, windowedY, windowedWidth, windowedHeight, 0);
 		}
+	}
+
+	public static int getFramebufferWidth() {
+		return framebufferWidth;
+	}
+
+	public static int getFramebufferHeight() {
+		return framebufferHeight;
 	}
 	
 }

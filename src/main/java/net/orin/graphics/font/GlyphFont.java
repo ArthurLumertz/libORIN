@@ -84,9 +84,9 @@ public class GlyphFont implements Font {
 			int g = (hex >> 16) & 0xFF;
 			int b = (hex >> 8) & 0xFF;
 
-			r = (r * 1) / 4;
-			g = (g * 1) / 4;
-			b = (b * 1) / 4;
+			r /= 4;
+			g /= 4;
+			b /= 4;
 
 			hex = (r << 24) | (g << 16) | (b << 8) | a;
 		}
