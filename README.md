@@ -21,7 +21,7 @@ Visit our [official website](https://arthurlumertz.github.io/libORIN/) for setup
   - Highly optimized math utilities and support for 2D/3D shapes
 
 ## Games using libORIN:
-- [Taplixic](https://ketoch.itch.io/taplixic)
+- [Taplixic](https://ketoch.itch.io/taplixic) by Ketoch
 
 ## Libraries used
 - LWJGL (the heart)
