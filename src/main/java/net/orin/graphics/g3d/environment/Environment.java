@@ -68,7 +68,7 @@ public class Environment {
 		shader.setUniform3f("fogColor", fogColor[0], fogColor[1], fogColor[2]);
 		shader.setUniform1f("fogStart", fogStart);
 		shader.setUniform1f("fogEnd", fogEnd);
-
+		
 		shader.setUniform3f("viewPos", camera.x(), camera.y(), camera.z());
 	}
 

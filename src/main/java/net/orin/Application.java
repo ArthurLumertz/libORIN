@@ -27,7 +27,6 @@ public class Application {
         this.displayMode = new DisplayMode(854, 480);
         setDisplayMode(displayMode);
         setOpenGLVersion(GLVersion.GL33);
-        setIcon("orin-framework-64x.png");
         setTitle("Game");
         setTargetFPS(0);
         useVsync(true);

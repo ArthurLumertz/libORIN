@@ -31,12 +31,14 @@ public class MeshInstance implements Disposable {
 		set(other);
 	}
 
-	public void addMesh(Mesh mesh) {
+	public MeshInstance addMesh(Mesh mesh) {
 		meshes.add(new SubMesh(mesh));
+		return this;
 	}
 
-	public void addMesh(SubMesh mesh) {
+	public MeshInstance addMesh(SubMesh mesh) {
 		meshes.add(mesh);
+		return this;
 	}
 
 	public MeshInstance(Mesh[] meshes) {
@@ -67,56 +69,69 @@ public class MeshInstance implements Disposable {
 		return this;
 	}
 
-	public void setPosition(float x, float y, float z) {
+	public MeshInstance setPosition(float x, float y, float z) {
 		transform.setPosition(x, y, z);
+		return this;
 	}
 
-	public void setPosition(Vector3f position) {
+	public MeshInstance setPosition(Vector3f position) {
 		transform.setPosition(position);
+		return this;
 	}
 
-	public void addPosition(float x, float y, float z) {
+	public MeshInstance addPosition(float x, float y, float z) {
 		transform.addPosition(x, y, z);
+		return this;
 	}
 
-	public void addPosition(Vector3f position) {
+	public MeshInstance addPosition(Vector3f position) {
 		transform.addPosition(position);
+		return this;
 	}
 
-	public void setScale(float x, float y, float z) {
+	public MeshInstance setScale(float x, float y, float z) {
 		transform.setScale(x, y, z);
+		return this;
 	}
 
-	public void setScale(Vector3f scale) {
+	public MeshInstance setScale(Vector3f scale) {
 		transform.setScale(scale);
+		return this;
 	}
 
-	public void addScale(float x, float y, float z) {
+	public MeshInstance addScale(float x, float y, float z) {
 		transform.addScale(x, y, z);
+		return this;
 	}
 
-	public void addScale(Vector3f scale) {
+	public MeshInstance addScale(Vector3f scale) {
 		transform.addScale(scale);
+		return this;
 	}
 
-	public void setRotation(float x, float y, float z) {
+	public MeshInstance setRotation(float x, float y, float z) {
 		transform.setRotation(x, y, z);
+		return this;
 	}
 
-	public void setRotation(Vector3f rotation) {
+	public MeshInstance setRotation(Vector3f rotation) {
 		transform.setRotation(rotation);
+		return this;
 	}
 
-	public void addRotation(float x, float y, float z) {
+	public MeshInstance addRotation(float x, float y, float z) {
 		transform.addRotation(x, y, z);
+		return this;
 	}
 
-	public void addRotation(Vector3f rotation) {
+	public MeshInstance addRotation(Vector3f rotation) {
 		transform.addRotation(rotation);
+		return this;
 	}
 
-	public void setTransform(Transform other) {
+	public MeshInstance setTransform(Transform other) {
 		this.transform.set(other);
+		return this;
 	}
 
 	public Transform getTransform() {

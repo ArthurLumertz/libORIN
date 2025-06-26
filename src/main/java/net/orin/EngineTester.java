@@ -1,11 +1,11 @@
 package net.orin;
 
-import net.orin.graphics.font.GlyphFont;
-import net.orin.graphics.g2d.Camera2D;
-import net.orin.graphics.g2d.TextureBatch;
 import org.lwjgl.opengl.GL11;
 
 import net.orin.graphics.Color;
+import net.orin.graphics.font.GlyphFont;
+import net.orin.graphics.g2d.Camera2D;
+import net.orin.graphics.g2d.TextureBatch;
 import net.orin.graphics.g2d.texture.Texture;
 import net.orin.graphics.g3d.Camera3D;
 import net.orin.graphics.g3d.Renderer;
@@ -19,6 +19,7 @@ import net.orin.lwjgl3.Display;
 import net.orin.lwjgl3.input.Key;
 import net.orin.lwjgl3.input.Keyboard;
 import net.orin.lwjgl3.input.Mouse;
+import net.orin.opengl.GLUtils;
 import net.orin.util.AssetLoader;
 import net.orin.util.MeshBuilder;
 
@@ -81,6 +82,7 @@ public class EngineTester implements Game {
 	public void update() {
 		float xa = Mouse.getDX();
 		float ya = Mouse.getDY();
+		
 		camera.addYaw(xa);
 		camera.addPitch(ya);
 
@@ -108,8 +110,7 @@ public class EngineTester implements Game {
 
 	@Override
 	public void render() {
-		GL11.glClearColor(0f, 0f, 0f, 0f);
-		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
+		GLUtils.clear(GLUtils.COLOR | GLUtils.DEPTH, Color.BLACK);
 
 		GL11.glViewport(0, 0, Display.getFramebufferWidth(), Display.getFramebufferHeight());
 

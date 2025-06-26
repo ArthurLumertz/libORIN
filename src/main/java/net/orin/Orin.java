@@ -1,11 +1,18 @@
 package net.orin;
 
+import net.orin.system.OSEnum;
+import net.orin.system.OperatingSystem;
+
 public class Orin {
 
 	private static final Version VERSION = new Version(1, 0, 0, "a1.0.0");
 
 	protected static int frames;
 	protected static int updates;
+	
+	public static OSEnum getOS() {
+		return OperatingSystem.getOS();
+	}
 
 	public static int getFPS() {
 		return frames;
